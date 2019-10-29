@@ -1,22 +1,76 @@
-.App {
+.wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: lightgray;
+}
+
+.title {
+  width: 100%;
+  padding: 100px 0;
+  font-size: 40px;
+  color: white;
+  background-color: black;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.form_wrap {
+  padding: 50px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.input_box {
+  width: 300px;
+  height: 50px;
+  margin-right: 30px;
+  font-size: 30px;
+  color: red;
+}
+
+.add {
+  height: 50px;
+  width: 180px;
+  border-radius: 50px;
+  background-color: black;
   color: white;
+  font-size: 30px;
+  box-shadow: 0 5px 0 rgba(136, 136, 136, 1);
 }
 
-.App-link {
-  color: #09d3ac;
+.add:hover {
+  cursor: pointer;
+}
+
+.add:active {
+  box-shadow: none;
+  transform: translate3d(0, 3px, 0);
+}
+
+ul {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+li p {
+  margin: 20px 0;
+  border: 1px solid black;
+  padding: 20px;
+  width: 300px;
+  background-color: white;
+}
+
+.complete {
+  height: 50px;
+  width: 180px;
+  border-radius: 50px;
+  font-size: 30px;
+  box-shadow: 0 3px 0 rgba(136, 136, 136, 1);
+}
+
+.complete:hover {
+  cursor: pointer;
+}
+
+.complete:active {
+  box-shadow: none;
+  transform: translate3d(0, 3px, 0);
 }
