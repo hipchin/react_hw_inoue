@@ -24,6 +24,19 @@
   margin-right: 30px;
   font-size: 30px;
   color: red;
+  outline: none;
+  border: 2px solid #ccc;
+  box-shadow: none;
+  transition: all 0.3s;
+}
+
+.input_box:focus {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+  border: solid 2px #666;
+}
+
+label {
+  margin-right: 15px;
 }
 
 .add {
@@ -34,6 +47,7 @@
   color: white;
   font-size: 30px;
   box-shadow: 0 5px 0 rgba(136, 136, 136, 1);
+  outline: none;
 }
 
 .add:hover {
@@ -64,6 +78,7 @@ li p {
   border-radius: 50px;
   font-size: 30px;
   box-shadow: 0 3px 0 rgba(136, 136, 136, 1);
+  outline: none;
 }
 
 .complete:hover {
