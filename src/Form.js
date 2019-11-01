@@ -4,7 +4,7 @@ export default function Form() {
   return (
     <div className="form_wrap">
       <form>
-        <label for="addDoing">作業内容</label>
+        <label htmlFor="addDoing">作業内容</label>
         <input
           type="text"
           name="desc"

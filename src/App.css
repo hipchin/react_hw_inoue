@@ -35,7 +35,7 @@
   border: solid 2px #666;
 }
 
-label {
+label[for="addDoing"] {
   margin-right: 15px;
 }
 
