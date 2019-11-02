@@ -1,18 +1,11 @@
 import React from "react";
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { name: "完了しました！" };
-  }
-
-}
+import { connectableObservableDescriptor } from "../../Library/Caches/typescript/3.6/node_modules/rxjs/internal/observable/ConnectableObservable";
 
 export default function Item() {
   return (
     <li>
-      <p>ここに内容が入ります</p>
-      <button onClick={() => { console.log = ("完了しました！") }} className="complete">完了</button>
-    </li >
+      <p className="task">ここに内容が入ります</p>
+      <button className="complete">完了</button>
+    </li>
   );
 }
