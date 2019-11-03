@@ -15,11 +15,23 @@ const AppWrapper = styled.div`
 `;
 
 export default function App() {
+  const todos = [
+    {
+      content: "課題を終わらせる"
+    },
+    {
+      content: "蟹食べ行こう"
+    },
+    {
+      content: "ディズニーランド"
+    }
+  ];
+
   return (
     <AppWrapper>
       <Title></Title>
       <Form></Form>
-      <List></List>
+      <List todos={todos}></List>
     </AppWrapper>
   );
 }
