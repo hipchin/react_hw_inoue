@@ -45,18 +45,28 @@ const FormWrap = styled.div`
   }
 `;
 
-export default function Form() {
+export default function Form(props) {
+  const [tmpTodo, setTmpTodo] = React.useState("");
+
   return (
     <FormWrap>
       <form>
         <label htmlFor="addDoing">作業内容</label>
         <input
           type="text"
-          name="desc"
+          name="todo"
           className="input_box"
           id="addDoing"
+          onChange={e => setTmpTodo(e.target.value)}
+          value={tmpTodo}
         ></input>
-        <button type="submit" className="add">
+        <button
+          className="add"
+          onClick={e => {
+            e.preventDefault();
+            props.addTodo(tmpTodo, setTmpTodo);
+          }}
+        >
           追加
         </button>
       </form>

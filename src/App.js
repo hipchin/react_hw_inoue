@@ -2,7 +2,6 @@ import React from "react";
 import List from "./List";
 import Form from "./Form";
 import Title from "./Title";
-import "./App.css";
 import "./reset.css";
 import styled from "styled-components";
 
@@ -11,26 +10,21 @@ const AppWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   background-color: lightgray;
-  height: 100vh;
+  padding: 30px;
 `;
 
 export default function App() {
-  const todos = [
-    {
-      content: "課題を終わらせる"
-    },
-    {
-      content: "蟹食べ行こう"
-    },
-    {
-      content: "ディズニーランド"
-    }
-  ];
+  const [todos, setTodos] = React.useState([]);
+
+  const addTodo = (tmpTodo, setTmpTodo) => {
+    setTodos([...todos, tmpTodo]);
+    setTmpTodo("");
+  };
 
   return (
     <AppWrapper>
       <Title></Title>
-      <Form></Form>
+      <Form addTodo={addTodo}></Form>
       <List todos={todos}></List>
     </AppWrapper>
   );
