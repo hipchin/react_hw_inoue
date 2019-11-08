@@ -10,7 +10,7 @@ const AppWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   background-color: lightgray;
-  padding: 30px;
+  padding: 30px　0;
 `;
 
 export default function App() {
