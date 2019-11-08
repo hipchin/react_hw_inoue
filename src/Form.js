@@ -13,7 +13,11 @@ const FormWrap = styled.div`
     border: 2px solid #ccc;
     box-shadow: none;
     transition: all 0.3s;
-  }
+    ::placeholder{
+      font-size:20px;
+      text-align:center;
+    }
+}
 
   .input_box:focus {
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
@@ -59,6 +63,7 @@ export default function Form(props) {
           id="addDoing"
           onChange={e => setTmpTodo(e.target.value)}
           value={tmpTodo}
+          placeholder="ここに入力してください"
         ></input>
         <button
           className="add"
