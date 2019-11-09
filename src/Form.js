@@ -13,15 +13,19 @@ const FormWrap = styled.div`
     border: 2px solid #ccc;
     box-shadow: none;
     transition: all 0.3s;
-    ::placeholder{
+    ::placeholder {
       font-size:20px;
       text-align:center;
+      opacity: 0.6;
     }
 }
 
   .input_box:focus {
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
     border: solid 2px #666;
+    ::placeholder {
+      color: transparent;
+    }
   }
 
   label[for="addDoing"] {
