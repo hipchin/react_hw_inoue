@@ -8,17 +8,17 @@ const FormWrap = styled.div`
     height: 50px;
     margin-right: 30px;
     font-size: 30px;
-    color: red;
+    color: black;
     outline: none;
     border: 2px solid #ccc;
     box-shadow: none;
     transition: all 0.3s;
     ::placeholder {
-      font-size:20px;
-      text-align:center;
+      font-size: 20px;
+      text-align: center;
       opacity: 0.6;
     }
-}
+  }
 
   .input_box:focus {
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
@@ -30,6 +30,7 @@ const FormWrap = styled.div`
 
   label[for="addDoing"] {
     margin-right: 15px;
+    letter-spacing: 1.5px;
   }
 
   .add {

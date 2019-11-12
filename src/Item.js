@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-
 const ItemWrap = styled.li`
   display: flex;
   flex-direction: column;
@@ -12,19 +11,23 @@ const ItemWrap = styled.li`
     padding: 20px;
     width: 300px;
     background-color: white;
-    font-size:30px;
+    font-size: 30px;
+  }
+  .buttonWrap {
+    display: flex;
   }
 `;
 
 const Button = styled.button`
-  background-color: ${(props) => (props.isDone ? "white" : "black")};
-  color: ${(props) => (props.isDone ? "black" : "white")};
+  background-color: ${props => (props.isDone ? "white" : "black")};
+  color: ${props => (props.isDone ? "black" : "white")};
   height: 50px;
   width: 180px;
   border-radius: 50px;
   font-size: 30px;
   box-shadow: 0 5px 0 rgba(136, 136, 136, 1);
   outline: none;
+  margin-right: 10px;
   &:hover {
     cursor: pointer;
   }
@@ -34,10 +37,20 @@ const Button = styled.button`
   }
 `;
 
+const DeleteButton = styled.button`
+  background-color: red;
+  color: black;
+  height: 50px;
+  width: 180px;
+  border-radius: 50px;
+  font-size: 30px;
+  box-shadow: 0 5px 0 rgba(136, 136, 136, 1);
+  outline: none;
+`;
+
 const Task = styled.p`
-text-decoration: ${(props) => (props.isDone ? "line-through" : "none")};
-`
-  ;
+  text-decoration: ${props => (props.isDone ? "line-through" : "none")};
+`;
 
 export default function Item(props) {
   const [isDone, setIsDone] = React.useState(false);
@@ -48,10 +61,21 @@ export default function Item(props) {
 
   return (
     <ItemWrap>
-      <Task isDone={isDone} className="task">{props.content}</Task>
-      <Button isDone={isDone} onClick={toggleIsDone}>
-        {buttonText}
-      </Button>
+      <Task isDone={isDone} className="task">
+        {props.content}
+      </Task>
+      <buttonWrap>
+        <Button isDone={isDone} onClick={toggleIsDone}>
+          {buttonText}
+        </Button>
+        <DeleteButton
+          onClick={() => {
+            props.deleteTodo(props.id);
+          }}
+        >
+          削除
+        </DeleteButton>
+      </buttonWrap>
     </ItemWrap>
   );
 }

@@ -7,11 +7,14 @@ const ListWrap = styled.ul`
 `;
 
 export default function List(props) {
-  return (
-    <ListWrap>
-      {props.todos.map(todo => {
-        return <Item content={todo} />;
-      })}
-    </ListWrap>
-  );
+  const Items = props.todos.map(todo => (
+    <Item
+      key={todo.id}
+      id={todo.id}
+      content={todo.content}
+      deleteTodo={props.deleteTodo}
+    ></Item>
+  ));
+
+  return <ListWrap>{Items}</ListWrap>;
 }
